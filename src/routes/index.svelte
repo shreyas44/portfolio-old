@@ -1,50 +1,44 @@
 <script>
-	import successkid from 'images/successkid.jpg';
+import Type from "../components/Type.svelte"
+import ScrollSection from "../components/ScrollSection.svelte"
+
+const message = `Hi There!
+I'm Shreyas, a 17 year old High School Student from Bangalore, India
+A TypeScript, React, GraphQL, Python, Basketball and Tech Lover
+Scroll down to see all my Project and Blog Posts
+Have a Wonderful Day :)
+`
 </script>
 
 <style>
-	h1, figure, p {
-		text-align: center;
-		margin: 0 auto;
+	:global(body)	{
+		background-color: #222;
 	}
 
-	h1 {
-		font-size: 2.8em;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
+	div {
+		scroll-snap-type: y mandatory;
+		height: 100vh;
+		overflow-y: scroll;
 	}
 
-	figure {
-		margin: 0 0 1em 0;
-	}
-
-	img {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
-	}
-
-	p {
-		margin: 1em auto;
-	}
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
+	#first-section {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 </style>
 
 <svelte:head>
-	<title>Sapper project template</title>
+	<title>Shreyas - Home</title>
 </svelte:head>
 
-<h1>Great success!</h1>
-
-<figure>
-	<img alt="Success Kid" src="{successkid}">
-	<figcaption>Have fun with Sapper!</figcaption>
-</figure>
-
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
+<div>
+	<ScrollSection>
+		<div id="first-section">
+			<Type text={message} />
+		</div>
+	</ScrollSection>
+	<ScrollSection>
+		<div style="height: 100%; width: 100%; background: white;">Hello World</div>
+	</ScrollSection>
+</div>
