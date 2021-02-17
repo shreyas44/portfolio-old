@@ -1,6 +1,9 @@
 <script context="module" lang="ts">
+	//@ts-ignore
 	import bedav from "../../projects/bedav.md"
+	//@ts-ignore
 	import skooltalk from "../../projects/skooltalk.md"
+	//@ts-ignore
 	import kickstarter from "../../projects/kickstarter.md"
 	import SimpleMarkdown from "simple-markdown"
 	import { parseMarkdown } from "../../lib/markdown-parser";

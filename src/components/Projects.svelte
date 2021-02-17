@@ -10,6 +10,8 @@
   }
 
   export let projects: Project[]
+
+  let currentProject = 0
 </script>
 
 <style>
@@ -39,6 +41,9 @@
   <a href="#projects"><h1>My Projects</h1></a>
   <div class="projects-container">
     {#each projects as project}
+      <!-- {#if }
+         -->
+      <!-- {/if} -->
       <Project {...project} description={project["short-description"]}/>
     {/each}
   </div>

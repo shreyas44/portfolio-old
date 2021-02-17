@@ -2,7 +2,7 @@
 	import Nav from '../components/Nav.svelte';
 </script>
 
-<style>
+<style global>
 	/* main {
 		position: relative;
 		max-width: 56em;
@@ -11,9 +11,9 @@
 		box-sizing: border-box;
 	} */
 
-	:global(*) {
-		box-sizing: border-box;
-	}
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
 
 	:root {
 		--icon-color: white;

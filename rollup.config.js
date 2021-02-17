@@ -1,27 +1,27 @@
-import path from "path";
-import resolve from "@rollup/plugin-node-resolve";
-import replace from "@rollup/plugin-replace";
-import commonjs from "@rollup/plugin-commonjs";
-import url from "@rollup/plugin-url";
-import svelte from "rollup-plugin-svelte";
-import babel from "@rollup/plugin-babel";
-import { terser } from "rollup-plugin-terser";
-import sveltePreprocess from "svelte-preprocess";
-import typescript from "@rollup/plugin-typescript";
-import config from "sapper/config/rollup.js";
-import pkg from "./package.json";
-import { string } from "rollup-plugin-string";
+import path from "path"
+import resolve from "@rollup/plugin-node-resolve"
+import replace from "@rollup/plugin-replace"
+import commonjs from "@rollup/plugin-commonjs"
+import url from "@rollup/plugin-url"
+import svelte from "rollup-plugin-svelte"
+import babel from "@rollup/plugin-babel"
+import { terser } from "rollup-plugin-terser"
+import typescript from "@rollup/plugin-typescript"
+import config from "sapper/config/rollup.js"
+import pkg from "./package.json"
+import { string } from "rollup-plugin-string"
+import sveltePreprocess from "svelte-preprocess"
 
-const mode = process.env.NODE_ENV;
-const dev = mode === "development";
-const legacy = !!process.env.SAPPER_LEGACY_BUILD;
+const mode = process.env.NODE_ENV
+const dev = mode === "development"
+const legacy = !!process.env.SAPPER_LEGACY_BUILD
 
 const onwarn = (warning, onwarn) =>
   (warning.code === "MISSING_EXPORT" && /'preload'/.test(warning.message)) ||
   (warning.code === "CIRCULAR_DEPENDENCY" &&
     /[/\\]@sapper[/\\]/.test(warning.message)) ||
   warning.code === "THIS_IS_UNDEFINED" ||
-  onwarn(warning);
+  onwarn(warning)
 
 export default {
   client: {
@@ -36,7 +36,14 @@ export default {
         "process.env.NODE_ENV": JSON.stringify(mode),
       }),
       svelte({
-        preprocess: sveltePreprocess({ sourceMap: dev }),
+        preprocess: sveltePreprocess({
+          sourceMap: dev,
+          defaults: {
+            script: "typescript",
+            style: "postcss",
+          },
+          postcss: true,
+        }),
         compilerOptions: {
           dev,
           hydratable: true,
@@ -99,7 +106,14 @@ export default {
         "process.env.NODE_ENV": JSON.stringify(mode),
       }),
       svelte({
-        preprocess: sveltePreprocess({ sourceMap: dev }),
+        preprocess: sveltePreprocess({
+          sourceMap: dev,
+          defaults: {
+            script: "typescript",
+            style: "postcss",
+          },
+          postcss: true,
+        }),
         compilerOptions: {
           dev,
           generate: "ssr",
@@ -143,4 +157,4 @@ export default {
     preserveEntrySignatures: false,
     onwarn,
   },
-};
+}

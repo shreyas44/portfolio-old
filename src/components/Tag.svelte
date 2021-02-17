@@ -60,19 +60,7 @@
 
 <style>
   div {
-    padding: 5px 9px;
-    border-radius: 5px;
-    font-size: 13px;
-    color: white;
-    background-color: #111;
-  }
-
-  div:first-child {
-    margin-left: 0;
-  }
-
-  div:last-child {
-    margin-right: 0;
+    @apply px-2.5 py-1.5 rounded-md text-sm text-white bg-gray-800;
   }
 </style>
 
