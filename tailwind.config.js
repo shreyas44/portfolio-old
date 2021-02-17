@@ -7,7 +7,12 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      textColor: ["visited"],
+      borderWidth: ["hover"],
+      borderStyle: ["hover"],
+      borderColor: ["hover"],
+    },
   },
   plugins: [],
 }

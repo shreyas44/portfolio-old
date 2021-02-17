@@ -27,7 +27,7 @@ import Projects from "../components/Projects.svelte"
 const message = `Hi There!
 I'm Shreyas, a 17 year old High School Student from Bangalore, India
 A TypeScript, React, GraphQL, Python, Basketball and Tech Lover
-Scroll down to see all my Project and Blog Posts
+Scroll down to see all my Projects and Blog Posts
 Have a Wonderful Day :)`
 
 export let projects: any[]

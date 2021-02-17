@@ -1,9 +1,8 @@
 <script lang="ts">
-import Github from "./Github.svelte";
-import IconContainer from "./IconContainer.svelte";
-import Medium from "./Medium.svelte";
-
-	import Twitter from "./Twitter.svelte"
+	import IconContainer from "./IconContainer.svelte";
+	import Github from "../icons/Github.svelte";
+	import Medium from "../icons/Medium.svelte";
+	import Twitter from "../icons/Twitter.svelte"
 </script>
 
 <style>
@@ -23,13 +22,13 @@ import Medium from "./Medium.svelte";
 
 	<a target="_blank" href="https://github.com/shreyas44">
 		<IconContainer>
-			<Github />
+			<Github style="bottom: 3px; transform: scale(1.1);"/>
 		</IconContainer>
 	</a>
 
 	<a target="_blank" href="https://shreyas-sreenivas.medium.com">
 		<IconContainer>
-			<Medium />
+			<Medium style="top: 5px"/>
 		</IconContainer>
 	</a>
 </nav>

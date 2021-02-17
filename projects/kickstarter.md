@@ -1,7 +1,7 @@
 ---
 name: Kickstarter Predictor
 short-description: Predicts whether a kickstarter will fail or succeed based on the given input
-is-deployed: true
+repository: https://github.com/shreyas44/kickstarter-predictor
 image: kickstarter.png
 tags:
   - Pandas

@@ -15,11 +15,12 @@
 </script>
 
 <style>
-  div {
-    @apply p-10 mt-2;
+  .projects {
+    @apply p-7 mt-2;
   }
 
   .projects-container {
+    @apply w-11/12 mx-auto mt-8;
     @apply flex justify-between;
   }
 
@@ -32,7 +33,7 @@
   }
 </style>
 
-<div id="#projects">
+<div id="#projects" class="projects">
   <a href="#projects"><h1>My Projects</h1></a>
   <div class="projects-container">
     {#each projects as project}

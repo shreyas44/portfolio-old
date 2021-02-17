@@ -56,11 +56,11 @@
 
   .cursor {
     width: 1px;
-    @apply h-6 bg-white inline-block;
+    @apply h-8 bg-white inline-block;
   }
 
   .whitespace {
-    @apply h-4 w-1.5 bg-transparent inline-block;
+    @apply h-4 w-2 bg-transparent inline-block;
   }
 
   span {
