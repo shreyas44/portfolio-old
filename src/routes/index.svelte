@@ -1,13 +1,16 @@
 <script>
 import Type from "../components/Type.svelte"
 import ScrollSection from "../components/ScrollSection.svelte"
+import Projects from "../components/Projects.svelte"
 
 const message = `Hi There!
 I'm Shreyas, a 17 year old High School Student from Bangalore, India
 A TypeScript, React, GraphQL, Python, Basketball and Tech Lover
 Scroll down to see all my Project and Blog Posts
-Have a Wonderful Day :)
-`
+Have a Wonderful Day :)`
+
+// const message = `one
+// two`
 </script>
 
 <style>
@@ -39,6 +42,6 @@ Have a Wonderful Day :)
 		</div>
 	</ScrollSection>
 	<ScrollSection>
-		<div style="height: 100%; width: 100%; background: white;">Hello World</div>
+		<Projects />
 	</ScrollSection>
 </div>

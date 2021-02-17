@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import { afterUpdate, beforeUpdate, onMount } from "svelte";
 
   export let text: string
 
@@ -8,14 +8,11 @@
   let currentCharacter = 0
   let currentLine = 0
   let show = false
+  $: isTypingComplete = currentLine + 1 == lines.length && currentCharacter + 1 == lines[currentLine].length
 
   let waitCounter = 0
-
-  onMount(() => {
-    show = true
-  })
-
-  setInterval(() => {
+  
+  const initCursor = setInterval(() => { 
     if (currentCharacter == lines[currentLine].length - 1) {
       if (waitCounter == 10) {
         currentLine += 1
@@ -31,6 +28,22 @@
       currentCharacter += 1
     }
   }, 50)
+
+  if (isTypingComplete) {
+    setInterval(() => {
+      show = !show
+    }, 500)
+  }
+
+  onMount(() => {
+    show = true
+  })
+
+  afterUpdate(() => {
+    if (isTypingComplete) {
+      clearInterval(initCursor)
+    }
+  })
 
   $: linesToShow = lines.slice(0, currentLine)
   $: textToShow = lines[currentLine].slice(0, currentCharacter + 1)
