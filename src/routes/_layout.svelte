@@ -11,7 +11,7 @@
 		box-sizing: border-box;
 	} */
 
-	* {
+	:global(*) {
 		box-sizing: border-box;
 	}
 

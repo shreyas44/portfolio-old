@@ -1,5 +1,5 @@
 <script lang="ts">
-import Tag from "./Tag.svelte"
+  import Tag from "./Tag.svelte"
 
   export let image: string
   export let name: string
@@ -19,12 +19,14 @@ import Tag from "./Tag.svelte"
     padding: 20px 20px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    justify-content: space-between;
+    height: 50%;
   }
 
   h3 {
     font-weight: bold;
-    font-size: 25px;
+    font-size: 28px;
+    margin: 0;
   }
 
   .project-image-container {
@@ -36,11 +38,11 @@ import Tag from "./Tag.svelte"
     overflow: hidden;
     display: flex;
     justify-content: center;
+    border-bottom: 5px solid rgb(8, 86, 131);
   }
 
   .project-tags-container {
     display: flex;
-    flex-grow: 1;
     flex-wrap: wrap;
     align-content: flex-end;
     gap: 5px;
@@ -49,6 +51,10 @@ import Tag from "./Tag.svelte"
   img {
     height: 100%;
   }
+
+  p {
+    margin-top: 5px;
+  }
 </style>
 
 <div class="project-container">
@@ -56,8 +62,10 @@ import Tag from "./Tag.svelte"
     <img src={image} alt={`${name} image`} />
   </div>
   <div class="project-contents-container">
-    <h3>{name}</h3>
-    <p>{description}</p>
+    <div class="project-contents-text">
+      <h3>{name}</h3>
+      <p>{description}</p>
+    </div>
     <div class="project-tags-container">
       {#each tags as tag}
         <Tag {tag} />
