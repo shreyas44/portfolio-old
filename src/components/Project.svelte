@@ -34,6 +34,8 @@ import Tag from "./Tag.svelte"
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
     text-align: center;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
   }
 
   .project-tags-container {
