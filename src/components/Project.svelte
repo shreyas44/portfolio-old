@@ -1,4 +1,6 @@
 <script lang="ts">
+import Tag from "./Tag.svelte"
+
   export let image: string
   export let name: string
   export let tags: string[]
@@ -15,6 +17,9 @@
 
   .project-contents-container {
     padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
 
   h3 {
@@ -31,6 +36,14 @@
     overflow: hidden;
   }
 
+  .project-tags-container {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    gap: 5px;
+  }
+
   img {
     height: 100%;
   }
@@ -43,9 +56,9 @@
   <div class="project-contents-container">
     <h3>{name}</h3>
     <p>{description}</p>
-    <div>
+    <div class="project-tags-container">
       {#each tags as tag}
-        <span>{tag}</span> 
+        <Tag {tag} />
       {/each}
     </div>
   </div>
