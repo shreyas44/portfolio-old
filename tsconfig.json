@@ -3,6 +3,6 @@
   "compilerOptions": {
     "lib": ["DOM", "ES2017", "WebWorker"]
   },
-  "include": ["src/**/*", "src/node_modules/**/*"],
-  "exclude": ["node_modules/*", "__sapper__/*"]
+  "include": ["src/**/*", "src/node_modules/**/*", "lib/**/*"],
+  "exclude": ["node_modules/*", "__sapper__/*", "static/*"]
 }

@@ -1,11 +1,18 @@
 <script context="module" lang="ts">
-	import bedav from "../../static/projects/bedav.md"
+	import bedav from "../../projects/bedav.md"
+	import skooltalk from "../../projects/skooltalk.md"
+	import kickstarter from "../../projects/kickstarter.md"
 	import SimpleMarkdown from "simple-markdown"
+	import { parseMarkdown } from "../../lib/markdown-parser";
 
 	const { defaultBlockParse: mdParse } = SimpleMarkdown
 
 	export async function preload(page, session) {
-		console.log(mdParse(bedav))	
+		const bedavData = parseMarkdown(bedav)
+		const skooltalkData = parseMarkdown(skooltalk)
+		const kickstarterData = parseMarkdown(kickstarter)
+
+		return { projects: [bedavData.meta, skooltalkData.meta, kickstarterData.meta] }
 	}
 </script>
 
@@ -19,6 +26,8 @@ I'm Shreyas, a 17 year old High School Student from Bangalore, India
 A TypeScript, React, GraphQL, Python, Basketball and Tech Lover
 Scroll down to see all my Project and Blog Posts
 Have a Wonderful Day :)`
+
+export let projects: any[]
 
 // const message = `one
 // two`
@@ -53,6 +62,6 @@ Have a Wonderful Day :)`
 		</div>
 	</ScrollSection>
 	<ScrollSection>
-		<Projects />
+		<Projects projects={projects} />
 	</ScrollSection>
 </div>

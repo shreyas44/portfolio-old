@@ -4,17 +4,18 @@
   interface Project {
     name: string
     tags: string[]
-    description: string
+    "short-description": string
     body?:string
     image: string
   }
 
-  // export let projects: Project[]
+  export let projects: Project[]
 </script>
 
 <style>
   div {
     padding: 35px;
+    margin-top: 30px;
   }
 
   a {
@@ -31,5 +32,5 @@
 
 <div id="#projects">
   <a href="#projects"><h1>My Projects</h1></a>
-  <!-- <Project {...projects[0]} /> -->
+  <Project {...projects[0]} description={projects[0]["short-description"]}/>
 </div>

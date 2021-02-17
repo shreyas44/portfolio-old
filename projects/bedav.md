@@ -1,9 +1,9 @@
 ---
-name: Kickstarter Predictor
-short-description: Predicts whether a kickstarter will fail or succeed based on the given input
+name: Bedav
+short-description: Shows the availability of beds reserverved for COVID patients in hospitals in multiple cities and districts across India.
 is-deployed: true
-image: kickstarter.png
-tools:
+image: bedav.png
+tags:
   - PostgreSQL
   - Graphene
   - Django
