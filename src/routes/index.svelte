@@ -1,4 +1,15 @@
-<script>
+<script context="module" lang="ts">
+	import bedav from "../../static/projects/bedav.md"
+	import SimpleMarkdown from "simple-markdown"
+
+	const { defaultBlockParse: mdParse } = SimpleMarkdown
+
+	export async function preload(page, session) {
+		console.log(mdParse(bedav))	
+	}
+</script>
+
+<script lang="ts">
 import Type from "../components/Type.svelte"
 import ScrollSection from "../components/ScrollSection.svelte"
 import Projects from "../components/Projects.svelte"
