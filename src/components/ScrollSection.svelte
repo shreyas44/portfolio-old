@@ -1,8 +1,7 @@
 <style>
   div {
     scroll-snap-align: center;
-    height: 100vh;
-    width: 100%;
+    @apply w-full h-screen;
   }
 </style>
 

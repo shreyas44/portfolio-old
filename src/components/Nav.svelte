@@ -8,15 +8,8 @@ import Medium from "./Medium.svelte";
 
 <style>
 	nav {
-		position: fixed;
-		height: 80px;
-		background-color: transparent;
-		top: 0;
-		right: 0;
-		display: flex;
-		align-items: center;
-		flex-direction: row-reverse;
-		padding: 0 30px;
+		@apply fixed h-20 bg-transparent top-0 right-0 px-8 space-x-4 space-x-reverse;
+		@apply flex flex-row-reverse items-center;
 	}
 
 </style>

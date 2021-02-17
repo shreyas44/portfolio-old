@@ -51,32 +51,20 @@
 
 <style>
   .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: transparent;
+    @apply flex flex-col items-center bg-transparent;
   }
 
   .cursor {
-    height: 1.5rem;
     width: 1px;
-    background-color: white;
-    display: inline-block;
+    @apply h-6 bg-white inline-block;
   }
 
   .whitespace {
-    height: 1rem;
-    width: 1px;
-    background-color: transparent;
-    display: inline-block;
+    @apply h-4 w-1.5 bg-transparent inline-block;
   }
 
   span {
-    transition: all 500ms;
-    display: flex;
-    align-items: center;
-    font-size: 1.2rem;
-    color: white;
+    @apply flex items-center text-2xl text-white;
   }
 </style>
 

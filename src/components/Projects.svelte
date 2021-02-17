@@ -16,24 +16,19 @@
 
 <style>
   div {
-    padding: 35px;
-    margin-top: 30px;
+    @apply p-10 mt-2;
   }
 
   .projects-container {
-    display: flex;
-    justify-content: space-between;
+    @apply flex justify-between;
   }
 
   a {
-    text-decoration: none;
+    @apply no-underline;
   }
   
   h1 {
-    font-size: 50px;
-    font-weight: bold;
-    text-align: center;
-    color: white;
+    @apply text-5xl font-bold text-center text-white;
   }
 </style>
 

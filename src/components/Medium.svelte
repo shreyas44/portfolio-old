@@ -1,7 +1,7 @@
 <style>
   svg {
     position: relative;
-    top: 3px;
+    top: 5px;
   }
 </style>
 

@@ -1,14 +1,11 @@
 <style>
   div {
-    height: 30px;
-    width: 30px;
+    @apply h-8 w-8 cursor-pointer;
     fill: var(--icon-color);
-    margin: 0 10px;
   }
 
   div:hover {
     fill: var(--icon-hover-color);
-    cursor: pointer;
   }
 </style>
 

@@ -9,57 +9,44 @@
 
 <style>
   .project-container {
+    @apply rounded-xl bg-white;
     width: 25rem;
-    border-radius: 1rem;
-    background-color: white;
     height: 70vh;
   }
 
   .project-contents-container {
-    padding: 20px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 50%;
+    @apply p-5 flex flex-col justify-between h-1/2;
   }
 
   h3 {
-    font-weight: bold;
-    font-size: 28px;
-    margin: 0;
+    @apply m-0 text-2xl font-bold;
   }
 
   .project-image-container {
-    height: 50%;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
+    @apply h-full rounded-t-xl overflow-hidden;
+    @apply flex justify-center;
+    @apply shadow-lg;
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
-    text-align: center;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    border-bottom: 5px solid rgb(8, 86, 131);
+  }
+
+  .project-image-shadow {
+    @apply shadow h-1/2;
   }
 
   .project-tags-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-end;
-    gap: 5px;
-  }
-
-  img {
-    height: 100%;
+    @apply flex flex-wrap gap-1.5;
   }
 
   p {
-    margin-top: 5px;
+    @apply mt-1 text-base;
   }
 </style>
 
 <div class="project-container">
-  <div class="project-image-container">
-    <img src={image} alt={`${name} image`} />
+  <div class="project-image-shadow">
+    <div class="project-image-container">
+      <img src={image} alt={`${name} image`} />
+    </div>
   </div>
   <div class="project-contents-container">
     <div class="project-contents-text">
