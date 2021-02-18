@@ -15,7 +15,7 @@
 		const skooltalkData = parseMarkdown(skooltalk)
 		const kickstarterData = parseMarkdown(kickstarter)
 
-		return { projects: [skooltalkData.meta, bedavData.meta, kickstarterData.meta] }
+		return { projects: [skooltalkData.meta, bedavData.meta, kickstarterData.meta, bedavData.meta] }
 	}
 </script>
 

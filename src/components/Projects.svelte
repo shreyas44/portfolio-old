@@ -1,12 +1,16 @@
 <script lang="ts">
+import { slide } from "svelte/transition";
+
   import Project from "./project/Project.svelte";
 
   interface Project {
     name: string
     tags: string[]
     "short-description": string
-    body?:string
     image: string
+    description?:string
+    repository?: string
+    url?: string
   }
 
   export let projects: Project[]
@@ -59,12 +63,11 @@
   <a href="#projects"><h1>My Projects</h1></a>
   <div class="projects-container">
     {#each currentProjects as project, i}
-      <Project 
-        isMiddle={i === 1} 
-        description={project["short-description"]}
-        handleClick={i === 0 ? getHandleClick("backward") : i === 1 ? undefined : getHandleClick("forward")}
-        {...project} 
-      />
+        <Project 
+          isMiddle={i === 1} 
+          handleClick={i === 0 ? getHandleClick("backward") : i === 1 ? undefined : getHandleClick("forward")}
+          {project} 
+        />
     {/each}
   </div>
 </div>

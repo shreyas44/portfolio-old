@@ -2,8 +2,8 @@
   import Github from "../../icons/Github.svelte";
   export let repository: string
 
-  let repositoryText: string | string[] = repository?.split("/")
-  repositoryText = repositoryText?.slice(repositoryText.length - 2).join("/")
+  $: repositoryParts = repository?.split("/")
+  $: repositoryText = repositoryParts?.slice(repositoryParts.length - 2).join("/")
 </script>
 
 <style>

@@ -4,12 +4,16 @@
   import Repository from "./Repository.svelte"
   import Heading from "./Heading.svelte"
 
-  export let image: string
-  export let name: string
-  export let tags: string[]
-  export let description: string
-  export let repository: string
-  export let url: string
+  interface Project {
+    name: string
+    tags: string[]
+    "short-description": string
+    image: string
+    repository?: string
+    url?: string
+  }
+
+  export let project: Project
 
   export let isMiddle: boolean
   export let handleClick
@@ -47,21 +51,21 @@
   class:middle-project={isMiddle} 
   on:click={handleClick}
 >
-  <Image src={image} alt={`${name}-image`} />
+  <Image src={project.image} alt={`${project.name}-image`} />
   <div class="project-contents-container">
 
     <div class="project-contents-text">
-      <Heading url={url}>{name}</Heading> 
-      <p>{description}</p>
+      <Heading url={project.url}>{project.name}</Heading> 
+      <p>{project["short-description"]}</p>
     </div>
 
     <div class="project-info-container">
-      {#if repository}
-        <Repository repository={repository} />
+      {#if project.repository}
+        <Repository repository={project.repository} />
       {/if}
       
       {#if isMiddle}
-        <Tags tags={tags} /> 
+        <Tags tags={project.tags} /> 
       {/if}
     </div>
 
