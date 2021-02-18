@@ -10,17 +10,26 @@
   export let repository: string
   export let url: string
 
+  export let isMiddle: boolean
+  export let handleClick
+
   let repositoryText: string | string[] = repository?.split("/")
   repositoryText = repositoryText?.slice(repositoryText.length - 2).join("/")
 
-  const urlText = url?.slice(8)
 </script>
 
 <style>
   .project-container {
-    @apply rounded-xl bg-white;
-    width: 25rem;
-    height: 73vh;
+    @apply rounded-xl bg-white shadow-xl transition-all duration-300;
+    @apply cursor-pointer hover:shadow-2xl;
+    width: 20rem;
+    height: 55vh;
+  }
+
+  .middle-project {
+    @apply cursor-default hover:shadow-xl;
+    width: 25rem; 
+    height: 75vh;
   }
 
   .project-contents-container {
@@ -39,7 +48,7 @@
   }
 
   .project-image-shadow {
-    @apply shadow h-1/2;
+    @apply shadow-md h-1/2 rounded-t-xl;
   }
 
   .project-info-container {
@@ -75,7 +84,11 @@
   }
 </style>
 
-<div class="project-container">
+<div 
+  class="project-container" 
+  class:middle-project={isMiddle} 
+  on:click={handleClick}
+>
   <div class="project-image-shadow">
     <div class="project-image-container">
       <img src={image} alt={`${name} image`} />
@@ -109,12 +122,14 @@
           <a href={repository}>{repositoryText}</a>
         </div>
       {/if}
-
-      <div class="project-tags-container">
-        {#each tags as tag}
-          <Tag {tag} />
-        {/each}
-      </div>
+      
+      {#if isMiddle}
+        <div class="project-tags-container">
+          {#each tags as tag}
+            <Tag {tag} />
+          {/each}
+        </div>
+      {/if}
 
     </div>
   </div>

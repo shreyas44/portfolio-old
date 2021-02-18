@@ -15,7 +15,7 @@
 		const skooltalkData = parseMarkdown(skooltalk)
 		const kickstarterData = parseMarkdown(kickstarter)
 
-		return { projects: [bedavData.meta, skooltalkData.meta, kickstarterData.meta] }
+		return { projects: [skooltalkData.meta, bedavData.meta, kickstarterData.meta] }
 	}
 </script>
 
@@ -25,9 +25,8 @@ import ScrollSection from "../components/ScrollSection.svelte"
 import Projects from "../components/Projects.svelte"
 
 const message = `Hi There!
-I'm Shreyas, a 17 year old High School Student from Bangalore, India
-A TypeScript, React, GraphQL, Python, Basketball and Tech Lover
-Scroll down to see all my Projects and Blog Posts
+I'm Shreyas, a High School Student from Bangalore, India
+Also a TypeScript, React, GraphQL, and Basketball Lover.
 Have a Wonderful Day :)`
 
 export let projects: any[]
@@ -41,7 +40,7 @@ export let projects: any[]
 	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700&display=swap');
 
 	:global(body)	{
-		background-color: #27272A;
+		/* background-color: #27272A; */
 		font-family: "Open Sans", sans-serif;
 	}
 

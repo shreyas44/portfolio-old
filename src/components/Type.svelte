@@ -56,7 +56,7 @@
 
   .cursor {
     width: 1px;
-    @apply h-8 bg-white inline-block;
+    @apply h-8 bg-black inline-block;
   }
 
   .whitespace {
@@ -64,7 +64,7 @@
   }
 
   span {
-    @apply flex items-center text-2xl text-white;
+    @apply flex items-center text-2xl text-black;
   }
 </style>
 
