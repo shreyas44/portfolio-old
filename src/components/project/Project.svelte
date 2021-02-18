@@ -22,7 +22,7 @@
 <style>
   .project-container {
     @apply rounded-xl bg-white shadow-xl transition-all duration-500;
-    @apply cursor-pointer hover:shadow-2xl box-border;
+    @apply cursor-pointer hover:shadow-2xl box-border z-0;
     width: 20rem;
     height: 55vh;
   }
