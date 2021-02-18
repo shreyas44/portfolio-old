@@ -5,6 +5,9 @@
 	import skooltalk from "../../projects/skooltalk.md"
 	//@ts-ignore
 	import kickstarter from "../../projects/kickstarter.md"
+	// @ts-ignore
+	import portfolio from "../../projects/portfolio.md"
+
 	import SimpleMarkdown from "simple-markdown"
 	import { parseMarkdown } from "../../lib/markdown-parser";
 
@@ -14,8 +17,9 @@
 		const bedavData = parseMarkdown(bedav)
 		const skooltalkData = parseMarkdown(skooltalk)
 		const kickstarterData = parseMarkdown(kickstarter)
+		const portfolioData = parseMarkdown(portfolio)
 
-		return { projects: [skooltalkData.meta, bedavData.meta, kickstarterData.meta, bedavData.meta] }
+		return { projects: [skooltalkData.meta, bedavData.meta, kickstarterData.meta, portfolioData.meta] }
 	}
 </script>
 

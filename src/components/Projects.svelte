@@ -1,6 +1,6 @@
 <script lang="ts">
-import { slide } from "svelte/transition";
-
+import { crossfade, fly, slide } from "svelte/transition";
+  import { flip } from "svelte/animate"
   import Project from "./project/Project.svelte";
 
   interface Project {
@@ -14,8 +14,10 @@ import { slide } from "svelte/transition";
   }
 
   export let projects: Project[]
+  projects = projects.map((project, id) => ({...project, id}))
 
   let projectsToShow = projects
+
 
   $: getHandleClick = (direction: "forward" | "backward") => {
     if (direction == "forward") {
@@ -62,12 +64,14 @@ import { slide } from "svelte/transition";
 <div id="#projects" class="projects">
   <a href="#projects"><h1>My Projects</h1></a>
   <div class="projects-container">
-    {#each currentProjects as project, i}
+    {#each currentProjects as project, i (project.name)}
+      <div out:fly={{x: -100, duration: 600}} in:fly={{x: 100, duration: 600 }} animate:flip={{duration: 600}}>
         <Project 
           isMiddle={i === 1} 
           handleClick={i === 0 ? getHandleClick("backward") : i === 1 ? undefined : getHandleClick("forward")}
           {project} 
         />
+      </div>
     {/each}
   </div>
 </div>

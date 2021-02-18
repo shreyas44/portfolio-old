@@ -54,6 +54,21 @@
     },
     tensorflow: {
       bg: "#DF582C"
+    },
+    svelte: {
+      bg: "#ED462F"
+    },
+    sapper: {
+      bg: "#3B9093"
+    },
+    vercel: {
+      bg: "#000"
+    },
+    tailwindcss: {
+      bg: "#45A8B4"
+    },
+    rollup: {
+      bg: "#ED4630"
     }
   }
 </script>

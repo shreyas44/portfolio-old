@@ -21,14 +21,14 @@
 
 <style>
   .project-container {
-    @apply rounded-xl bg-white shadow-xl transition-all duration-300;
+    @apply rounded-xl bg-white shadow-xl transition-all duration-500;
     @apply cursor-pointer hover:shadow-2xl box-border;
     width: 20rem;
     height: 55vh;
   }
 
   .middle-project {
-    @apply cursor-default hover:shadow-xl;
+    @apply cursor-default hover:shadow-xl z-10;
     width: 25rem; 
     height: 75vh;
   }

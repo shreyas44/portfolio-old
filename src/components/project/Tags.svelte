@@ -12,7 +12,7 @@
 </style>
 
 <div 
-  transition:scale={{start: 0, duration: 200, opacity: 0}}
+  transition:scale={{start: 0, duration: 600, opacity: 0}}
 >
   {#each tags as tag}
     <Tag {tag} />
