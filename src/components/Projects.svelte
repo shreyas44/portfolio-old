@@ -41,7 +41,7 @@ import { crossfade, fly, slide } from "svelte/transition"
     }
   }
 
-  const getX = (direction: "left" | "right") => direction == "left" ? -100 : 100
+  const getX = (direction: "left" | "right") => direction == "left" ? -300 : 300
 
   $: currentProjects = projectsToShow.slice(0,3)
 </script>
