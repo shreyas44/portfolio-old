@@ -1,6 +1,5 @@
 <script lang="ts">
-  import Project from "./Project.svelte";
-  import { crossfade, scale } from "svelte/transition"
+  import Project from "./project/Project.svelte";
 
   interface Project {
     name: string
@@ -12,24 +11,6 @@
 
   export let projects: Project[]
 
-  const [send, receive] = crossfade({
-		duration: d => Math.sqrt(d * 200),
-
-		fallback(node, params) {
-			const style = getComputedStyle(node);
-			const transform = style.transform === 'none' ? '' : style.transform;
-
-			return {
-				duration: 600,
-				css: t => `
-					transform: ${transform} scale(${t});
-					opacity: ${t}
-				`
-			};
-		}
-	});
-
-  
   let projectsToShow = projects
 
   $: getHandleClick = (direction: "forward" | "backward") => {
@@ -78,14 +59,12 @@
   <a href="#projects"><h1>My Projects</h1></a>
   <div class="projects-container">
     {#each currentProjects as project, i}
-      <div in:receive={{key: project.name}} out:send={{key: project.name}}>
-        <Project 
-          isMiddle={i === 1} 
-          description={project["short-description"]}
-          handleClick={i === 0 ? getHandleClick("backward") : i === 1 ? undefined : getHandleClick("forward")}
-          {...project} 
-        />
-      </div>
+      <Project 
+        isMiddle={i === 1} 
+        description={project["short-description"]}
+        handleClick={i === 0 ? getHandleClick("backward") : i === 1 ? undefined : getHandleClick("forward")}
+        {...project} 
+      />
     {/each}
   </div>
 </div>
