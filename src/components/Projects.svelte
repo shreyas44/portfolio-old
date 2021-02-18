@@ -73,7 +73,7 @@ import { crossfade, fly, slide } from "svelte/transition"
 <div id="#projects" class="projects">
   <a href="#projects"><h1>My Projects</h1></a>
   <div class="projects-container">
-    <div class="navigation-icon" on:click={getHandleClick("forward")}>
+    <div class="navigation-icon" on:click={getHandleClick("backward")}>
       <ChevronLeft />
     </div>
     {#each currentProjects as project, i (project.name)}
@@ -89,7 +89,7 @@ import { crossfade, fly, slide } from "svelte/transition"
         />
       </div>
     {/each}
-    <div class="navigation-icon" on:click={getHandleClick("backward")}>
+    <div class="navigation-icon" on:click={getHandleClick("forward")}>
       <ChevronRight />
     </div>
   </div>
